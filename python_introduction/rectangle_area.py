@@ -1,10 +1,9 @@
-python
 # Rectangle Area Calculator
-length = 10    # Length of the rectangle
-width = 5      # Width of the rectangle
+length = 10  # Length of rectangle (must be positive number)
+width = 5    # Width of rectangle (must be positive number)
 
-# Calculate area
+# Calculate area (length × width)
 area = length * width
 
-# Print the result
-print(f"The area of the rectangle is: {area}")
+# Display result (formatted to specification)
+print("The area of the rectangle is:", area)
