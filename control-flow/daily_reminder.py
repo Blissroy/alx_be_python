@@ -1,37 +1,26 @@
-#!/usr/bin/python3
 # daily_reminder.py
 
-# Get user input
+# 1. Prompt for a single task
 task = input("Enter your task: ")
 priority = input("Priority (high/medium/low): ").lower()
 time_bound = input("Is it time-bound? (yes/no): ").lower()
 
-# Process and generate reminder
+# 2. Process using match-case (Python 3.10+ required)
 match priority:
     case "high":
-        reminder = f"'{task}' is a high priority task"
+        if time_bound == "yes":
+            print(f"Reminder: '{task}' is a high priority task that requires immediate attention today!")
+        else:
+            print(f"Reminder: '{task}' is a high priority task. Try to address it as soon as possible.")
     case "medium":
-        reminder = f"'{task}' is a medium priority task"
+        if time_bound == "yes":
+            print(f"Reminder: '{task}' is a medium priority task that requires attention today.")
+        else:
+            print(f"Note: '{task}' is a medium priority task. Plan to do it soon.")
     case "low":
-        reminder = f"Note: '{task}' is a low priority task"
+        if time_bound == "yes":
+            print(f"Reminder: '{task}' is a low priority task that still needs to be done today.")
+        else:
+            print(f"Note: '{task}' is a low priority task. Consider completing it when you have free time.")
     case _:
-        reminder = f"'{task}' has an unrecognized priority"
-
-# Add time sensitivity note
-if time_bound == "yes":
-    if priority in ["high", "medium"]:
-        reminder += " that requires immediate attention today!"
-    else:
-        reminder += ", but it's time-bound. Consider scheduling it."
-elif time_bound == "no":
-    if priority == "low":
-        reminder += ". Consider completing it when you have free time."
-    else:
-        reminder += ". Plan time for it today."
-
-# Print final reminder
-print("\n" + reminder)
-
-# Celebration message
-print("\nWell done on completing this project! Let the world hear about this milestone achieved.")
-print("\n🚀 Click here to tweet! 🚀")
+        print("Invalid priority entered. Please enter high, medium, or low.")
