@@ -1,25 +1,30 @@
-python
+# robust_division_calculator.py
+
 def safe_divide(numerator, denominator):
     """
-    Performs division of two numbers with proper error handling.
-    
+    Safely perform division with comprehensive error handling.
+
     Args:
-        numerator: The numerator as a string (to be converted to float)
-        denominator: The denominator as a string (to be converted to float)
-        
+        numerator: The dividend (can be string or numeric)
+        denominator: The divisor (can be string or numeric)
+
     Returns:
-        float: The result of division if successful
-        str: Error message if division fails
+        str: Result message or error message
     """
     try:
-        # Try to convert inputs to floats
+        # Attempt to convert arguments to floats
         num = float(numerator)
-        den = float(denominator)
-    except ValueError:
-        return "Error: Please enter numeric values only."
-    
-    try:
-        result = num / den
-        return result
+        denom = float(denominator)
+
+        # Perform division
+        result = num / denom
+        return f"The result of the division is {result}"
+
     except ZeroDivisionError:
         return "Error: Cannot divide by zero."
+
+    except ValueError:
+        return "Error: Please enter numeric values only."
+
+    except Exception as e:
+        return f"An unexpected error occurred: {e}"
