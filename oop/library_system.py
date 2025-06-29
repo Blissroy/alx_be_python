@@ -2,7 +2,7 @@
 """Defines Book, EBook, PrintBook classes using inheritance, and Library class using composition."""
 
 
-class Book:
+class Book(object):
     def __init__(self, title, author):
         self.title = title
         self.author = author
