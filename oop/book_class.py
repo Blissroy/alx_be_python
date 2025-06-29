@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+"""Defines a Book class with magic methods"""
+
+
 class Book:
     def _init_(self, title, author, year):
         self.title = title
