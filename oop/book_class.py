@@ -1,9 +1,5 @@
-#!/usr/bin/python3
-"""Defines a Book class with magic methods"""
-
-
 class Book:
-    def _init_(self, title, author, year):
+    def _init_(self, title: str, author: str, year: int):
         self.title = title
         self.author = author
         self.year = year
@@ -11,8 +7,8 @@ class Book:
     def _del_(self):
         print(f"Deleting {self.title}")
 
-    def _str_(self):
+    def _str_(self) -> str:
         return f"{self.title} by {self.author}, published in {self.year}"
 
-    def _repr_(self):
+    def _repr_(self) -> str:
         return f"Book('{self.title}', '{self.author}', {self.year})"
