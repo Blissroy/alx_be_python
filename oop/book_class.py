@@ -1,14 +1,14 @@
 class Book:
-    def _init_(self, title: str, author: str, year: int):
+    def __init__(self, title: str, author: str, year: int):
         self.title = title
         self.author = author
         self.year = year
 
-    def _del_(self):
+    def __del__(self):
         print(f"Deleting {self.title}")
 
-    def _str_(self) -> str:
+    def __str__(self) -> str:
         return f"{self.title} by {self.author}, published in {self.year}"
 
-    def _repr_(self) -> str:
+    def __repr__(self) -> str:
         return f"Book('{self.title}', '{self.author}', {self.year})"
