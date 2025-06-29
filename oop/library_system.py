@@ -22,7 +22,7 @@ class EBook(Book):
 
 class PrintBook(Book):
     def __init__(self, title, author, page_count):
-        super()._init_(title, author)
+        super().__init__(title, author)
         self.page_count = page_count
 
     def __str__(self):
